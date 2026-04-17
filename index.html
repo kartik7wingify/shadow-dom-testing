@@ -1,166 +1,568 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <!-- Start VWO Async SmartCode -->
-  <script type="text/javascript">
-    const params = new URLSearchParams(window.location.search);
-    const accId = parseInt(params.get("id"));
-    const accountId = accId || 1172200;
-    console.log("Account-Id ->", accountId);
-    /* eslint-disable no-undef */
-   window._vwo_code || (function() {
-   var account_id=accountId,
-   version=2.1,
-   settings_tolerance=2000,
-   hide_element='body',
-        hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important',
-        /* DO NOT EDIT BELOW THIS LINE */
-   f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){if(performance.getEntriesByName('first-contentful-paint')[0]){return''}return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){if(!f){f=true;var t=d.getElementById('_vis_opt_path_hides');if(t)t.parentNode.removeChild(t);if(e)(new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e}},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript';if(e.src){t.src=e.src}else{t.text=e.text}d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){var i=this.getSettings(),n=d.createElement('script'),r=this;t=t||{};if(i){n.textContent=i;d.getElementsByTagName('head')[0].appendChild(n);if(!w.VWO||VWO.caE){stT.removeItem(cK);r.load(e)}}else{var o=new XMLHttpRequest;o.open('GET',e,true);o.withCredentials=!t.dSC;o.responseType=t.responseType||'text';o.onload=function(){if(t.onloadCb){return t.onloadCb(o,e)}if(o.status===200){_vwo_code.addScript({text:o.responseText})}else{_vwo_code.finish('&e=loading_failure:'+e)}};o.onerror=function(){if(t.onerrorCb){return t.onerrorCb(e)}_vwo_code.finish('&e=loading_failure:'+e)};o.send()}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t;if(this.hide_element()!=='body'){t=d.createElement('style');var i=this.hide_element(),n=i?i+this.hide_element_style():'',r=d.getElementsByTagName('head')[0];t.setAttribute('id','_vis_opt_path_hides');v&&t.setAttribute('nonce',v.nonce);t.setAttribute('type','text/css');if(t.styleSheet)t.styleSheet.cssText=n;else t.appendChild(d.createTextNode(n));r.appendChild(t)}else{t=d.getElementsByTagName('head')[0];var n=d.createElement('div');n.style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;';n.setAttribute('id','_vis_opt_path_hides');n.classList.add('_vis_hide_layer');t.parentNode.insertBefore(n,t.nextSibling)}var o='https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&vn='+version;if(w.location.search.indexOf('_vwo_xhr')!==-1){this.addScript({src:o})}else{this.load(o+'&x=true')}}};w._vwo_code=code;code.init();})();
-    window._vwo_pc_custom = {
-      a: 100,
-      t: 100
-    };	    
-  </script>
-  <!-- End VWO Async SmartCode -->
-  <meta charset="UTF-8" />
-  <title>Shadow + iFrame Metrics Demo</title>
-  <style>
-    body {
-      font-family: Arial;
-      padding: 20px;
-    }
+    <title>My Website</title>
+    <style>
+      #contact_us,
+      #about,
+      #suggestions {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        border: 2px outset black;
+        background-color: white;
+        text-align: center;
+        color: black;
+        text-decoration: none;
+        border-radius: 100px;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 20px;
+      }
+      .wrapper {
+        position: absolute;
+        top: 100px;
+        left: 450px;
+        background: #fff;
+        max-width: 365px;
+        border-radius: 15px;
+        text-align: center;
+        padding: 25px 25px 30px 25px;
+        box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.15);
+      }
+      .wrapper.hide {
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0.8);
+        transition: all 0.3s ease;
+      }
+      .wrapper img {
+        max-width: 150px;
+      }
+      .wrapper .content {
+        margin-top: 20px;
+      }
+      .wrapper header {
+        font-size: 25px;
+        font-weight: 600;
+      }
+    </style>
+    
+   <!-- Start VWO Async SmartCode -->
+<link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
+<script type='text/javascript' id='vwoCode'>
+window._vwo_code ||
+(function () {
+var w=window,
+d=document;
+var account_id=1172200,
+version=2.2,
+settings_tolerance=2000,
+hide_element='body',
+hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important';
+/* DO NOT EDIT BELOW THIS LINE */
+var f=0, v;
+if(f=!1,v=d.querySelector('#vwoCode'),cc={},-1<d.URL.indexOf('__vwo_disable__')||w._vwo_code)return;try{var e=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=e&&'object'==typeof e?e:{}}catch(e){}function r(t){try{return decodeURIComponent(t)}catch(e){return t}}var s=function(){var e={combination:[],combinationChoose:[],split:[],exclude:[],uuid:null,consent:null,optOut:null},t=d.cookie||'';if(!t)return e;for(var n,i,o=/(?:^|;\s*)(?:(_vis_opt_exp_(\d+)_combi=([^;]*))|(_vis_opt_exp_(\d+)_combi_choose=([^;]*))|(_vis_opt_exp_(\d+)_split=([^:;]*))|(_vis_opt_exp_(\d+)_exclude=[^;]*)|(_vis_opt_out=([^;]*))|(_vwo_global_opt_out=[^;]*)|(_vwo_uuid=([^;]*))|(_vwo_consent=([^;]*)))/g;null!==(n=o.exec(t));)try{n[1]?e.combination.push({id:n[2],value:r(n[3])}):n[4]?e.combinationChoose.push({id:n[5],value:r(n[6])}):n[7]?e.split.push({id:n[8],value:r(n[9])}):n[10]?e.exclude.push({id:n[11]}):n[12]?e.optOut=r(n[13]):n[14]?e.optOut=!0:n[15]?e.uuid=r(n[16]):n[17]&&(i=r(n[18]),e.consent=i&&3<=i.length?i.substring(0,3):null)}catch(e){}return e}();function i(){var e=function(){if(w.VWO&&Array.isArray(w.VWO))for(var e=0;e<w.VWO.length;e++){var t=w.VWO[e];if(Array.isArray(t)&&('setVisitorId'===t[0]||'setSessionId'===t[0]))return!0}return!1}(),t='a='+account_id+'&u='+encodeURIComponent(w._vis_opt_url||d.URL)+'&vn='+version+'&ph=1'+('undefined'!=typeof platform?'&p='+platform:'');e||((n=function(){var e,t=[],n={},i=w.VWO&&w.VWO.appliedCampaigns||{};for(e in i){var o=i[e]&&i[e].v;o&&(t.push(e+'-'+o+'-1'),n[e]=!0)}if(s&&s.combination)for(var r=0;r<s.combination.length;r++){var a=s.combination[r];n[a.id]||t.push(a.id+'-'+a.value)}return t.join('|')}())&&(t+='&c='+n),(n=function(){var e=[],t={};if(s&&s.combinationChoose)for(var n=0;n<s.combinationChoose.length;n++){var i=s.combinationChoose[n];e.push(i.id+'-'+i.value),t[i.id]=!0}if(s&&s.split)for(var o=0;o<s.split.length;o++)t[(i=s.split[o]).id]||e.push(i.id+'-'+i.value);return e.join('|')}())&&(t+='&cc='+n),(n=function(){var e={},t=[];if(w.VWO&&Array.isArray(w.VWO))for(var n=0;n<w.VWO.length;n++){var i=w.VWO[n];if(Array.isArray(i)&&'setVariation'===i[0]&&i[1]&&Array.isArray(i[1]))for(var o=0;o<i[1].length;o++){var r,a=i[1][o];a&&'object'==typeof a&&(r=a.e,a=a.v,r&&a&&(e[r]=a))}}for(r in e)t.push(r+'-'+e[r]);return t.join('|')}())&&(t+='&sv='+n)),s&&s.optOut&&(t+='&o='+s.optOut);var n=function(){var e=[],t={};if(s&&s.exclude)for(var n=0;n<s.exclude.length;n++){var i=s.exclude[n];t[i.id]||(e.push(i.id),t[i.id]=!0)}return e.join('|')}();return n&&(t+='&e='+n),s&&s.uuid&&(t+='&id='+s.uuid),s&&s.consent&&(t+='&consent='+s.consent),w.name&&-1<w.name.indexOf('_vis_preview')&&(t+='&pM=true'),w.VWO&&w.VWO.ed&&(t+='&ed='+w.VWO.ed),t}code={nonce:v&&v.nonce,library_tolerance:function(){return'undefined'!=typeof library_tolerance?library_tolerance:void 0},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){return performance.getEntriesByName('first-contentful-paint')[0]?'':'string'==typeof cc.hE?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){var t;f||(f=!0,(t=d.getElementById('_vis_opt_path_hides'))&&t.parentNode.removeChild(t),e&&((new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e))},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript',e.src?t.src=e.src:t.text=e.text,v&&t.setAttribute('nonce',v.nonce),d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){t=t||{};var n=new XMLHttpRequest;n.open('GET',e,!0),n.withCredentials=!t.dSC,n.responseType=t.responseType||'text',n.onload=function(){if(t.onloadCb)return t.onloadCb(n,e);200===n.status?_vwo_code.addScript({text:n.responseText}):_vwo_code.finish('&e=loading_failure:'+e)},n.onerror=function(){if(t.onerrorCb)return t.onerrorCb(e);_vwo_code.finish('&e=loading_failure:'+e)},n.send()},init:function(){var e,t=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish()},t),'body'!==this.hide_element()?(n=d.createElement('style'),e=(t=this.hide_element())?t+this.hide_element_style():'',t=d.getElementsByTagName('head')[0],n.setAttribute('id','_vis_opt_path_hides'),v&&n.setAttribute('nonce',v.nonce),n.setAttribute('type','text/css'),n.styleSheet?n.styleSheet.cssText=e:n.appendChild(d.createTextNode(e)),t.appendChild(n)):(n=d.getElementsByTagName('head')[0],(e=d.createElement('div')).style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;',e.setAttribute('id','_vis_opt_path_hides'),e.classList.add('_vis_hide_layer'),n.parentNode.insertBefore(e,n.nextSibling));var n='https://dev.visualwebsiteoptimizer.com/j.php?'+i();-1!==w.location.search.indexOf('_vwo_xhr')?this.addScript({src:n}):this.load(n+'&x=true',{l:1})}};w._vwo_code=code;code.init();})();
+</script>
+<!-- End VWO Async SmartCode --> 
 
-    .section {
-      margin-bottom: 40px;
-    }
 
-    iframe {
-      width: 100%;
-      height: 220px;
-      border: 2px solid #444;
-    }
-  </style>
+
 </head>
 
 <body>
+   <script>
+    var testing = 10;
+</script>
 
-  <h1>Shadow / iFrame Elements Metrics Demo</h1>
-
-  <!-- Form Section -->
-  <div id="form-section" class="section">
-    <h2>Contact Form</h2>
-    <form id="contact-form" class="contact-form">
-      <div class="form-group">
-        <label for="user-name" class="form-label">Name:</label>
-        <input type="text" id="user-name" class="form-input text-input" name="name" placeholder="Enter your name" />
-      </div>
-
-      <div class="form-group">
-        <label for="user-email" class="form-label">Email:</label>
-        <input type="text" id="user-email" class="form-input text-input email-input" name="email"
-          placeholder="Enter your email" />
-      </div>
-
-      <div class="form-group">
-        <label for="user-message" class="form-label">Message:</label>
-        <textarea id="user-message" class="form-input textarea-input" name="message" rows="5"
-          placeholder="Enter your message"></textarea>
-      </div>
-
-      <button type="submit" id="submit-btn" class="submit-button">Submit</button>
+  <h1 style="text-align: center">Registration Form</h1>
+    <div class="div1">
+      <h2 id="WelMsg">Welcome to the website, Registration Starts Here...</h2>
+      <p id="Welpara">
+        Let's start now, just try to fill in the details carefully and
+        correctly.<br /><br />
+        <b>NOTE:-</b>Please enter a password that is at least 8 characters long.
+      </p>
+    </div>
+    <p id="p2"><strong>SPA BUTTON</strong></p>
+    <button id="spa_btn" onclick="historyPushUrl()">SPA URL</button>
+    <br/>
+    <br/>
+    <form action="" id="registrationForm">
+      <table>
+        <tr>
+          <td>Name:</td>
+          <td>
+            <input type="text" placeholder="Name" name="" />
+          </td>
+        </tr>
+        <tr>
+          <td>Phone Number:</td>
+          <td>
+            <input type="phone" placeholder="phoneNumber" />
+          </td>
+        </tr>
+        <tr>
+          <td>Email Id:</td>
+          <td>
+            <input type="email" placeholder="example1@*8" />
+          </td>
+        </tr>
+        <tr>
+          <td>Password:</td>
+          <td>
+            <input type="password" placeholder="Password" />
+          </td>
+        </tr>
+        <tr>
+          <td>Gender:</td>
+          <td>
+            <input type="radio" name="gender" />Male
+            <input type="radio" name="gender" />Female
+          </td>
+        </tr>
+        <tr>
+          <td>Date of Birth:</td>
+          <td>
+            <input type="date" />
+          </td>
+        </tr>
+        <tr>
+          <td>Hobbies:</td>
+          <td>
+            <input type="checkbox" singing />Singing
+            <input type="checkbox" Dancing />Dancing
+            <input type="checkbox" playing />Sports
+          </td>
+        </tr>
+        <tr>
+          <td>Education Qualification:</td>
+          <td>
+            <select>
+              <option>Select Option</option>
+              <option>10+2</option>
+              <option>Graduation</option>
+              <option>Postgraduation</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Address:</td>
+          <td>
+            <textarea rows="5" col="17" placeholder="Address"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" id="submit_btn" value="Submit" />
+            <input type="reset" value="Reset" />
+          </td>
+        </tr>
+      </table>
     </form>
-  </div>
+    <h3>
+      By clicking submit, you agree to our terms of service and privacy policy.
+    </h3>
+    <p>
+      After registering please check your email for a confirmation message.<br /><br />
+      Already a registered user? <a href="#">Click here</a>
+    </p>
+    <br />
+    <p id="p1"><strong>FEEDBACK-FORM</strong></p>
+    <div>
+      <form action="feedback.html" id="feedbackForm">
+        <label for="question"
+          >If you're facing any problem please write to us.We'll solve the issue
+          at the earliest.</label
+        ><br />
+        <br />
+        <br />
+        <input
+          class="feedBackForm"
+          id="answer"
+          name="feedback"
+          placeholder="Text"
+          size="100"
+          style="height: 100px"
+          type="text"
+          value=""
+        /><br />
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <br/>
+    <button onclick="spaNavigation()">SPA Navigation</button>
+    <br/>
+    <br/>
+    <a href="javascript:void(0)" onclick="location.hash='spa/1.html'"
+      >Change hash</a
+    >
+    <br/>
+    <br/>
+    <a id="Customlink" href="https://testdata.wingified.com/async/analyse.html?id=838540&test=CoalGoal">Click here for Link</a>
+    <p></p>
+    <button id="clickonlinkDummy">ClickElement</button>
+    <button id="testelement2">ClickElement2</button>
+    <button id="testelement3">ClickElement3</button>
+    <button id="testelement4">ClickElement4</button>
+    <button id="testelement5">ClickElement5</button>
+    <button id="clickMe">ClickMe !!!</button>
 
-  <!-- Standard Page -->
-  <div id="product-page" class="section">
-    <button class="add-to-cart">Standard Add to Cart</button>
-  </div>
+    <button id="activateButton" onclick="activateVWO()">Activate API</button>
+    
+    <p>
+      <br />
+      <br />
+      <a href="suggestions.html" id="suggestions">Suggestions</a><br />
+      <br />
+      <br />
+      <br />
+      <a href="contact_us.html" id="contact_us">Contact us</a><br />
+      <br />
+      <br />
+      <br />
+      <a href="about.html" id="about">About</a>
 
-  <!-- Shadow DOM -->
-  <div id="product-card" class="section"></div>
+      <br />
+      <br />
+      <br />
+    </p>
 
-  <!-- Nested Shadow DOM -->
-  <div id="search-results" class="section"></div>
+    <div style="height: 30px"></div>
+    <a id="dynamicLink"></a>
+    <p>
+      <button onclick="myFunction()">Generate Link</button>
+      <input id="input" />
+      <script>
+        function myFunction() {
+          document.getElementById("dynamicLink").innerHTML = "GENERATED LINK";
+          document.getElementById("dynamicLink").href =
+            document.getElementById("input").value;
+          //   location.href=document.getElementById("input").value;
+        }
+      </script>
+    </p>
+    <script>
+        let spaCount = 1;
 
-  <!-- iFrame -->
-  <iframe id="site-header"></iframe>
+        function historyPushUrl() {
+            const url = new URL(window.location);
+            url.searchParams.set('spa', spaCount);
+            window.history.pushState({}, '', url);
+            spaCount++;
+        }
 
-  <!-- iFrame with Shadow DOM -->
-  <iframe id="checkout"></iframe>
+        function spaNavigation()
+          {
+            history.pushState(null, null, '?query=' + Date.now());
+          }
+      
+    </script>
+    
+   <script>
+    /* function activateVWO() {
+        window.VWO = window.VWO || [];
+        window.VWO.push(['activate', {virtualPageUrl: 'https://testing-base.vercel.app/'}])
+        }
 
-  <!-- Shadow containing iframe -->
-  <div id="order-summary" class="section"></div>
+      // Attach DOMContentLoaded event listener
+      document.addEventListener('DOMContentLoaded', activateVWO);
+      */
+    </script>
+    <script>document.getElementById('testelement5').addEventListener('click', function () {if (document.getElementById('newElementAdded')) return;var newButton = document.createElement('button');newButton.id = 'newElementAdded';newButton.innerText = 'New Element Added';document.body.appendChild(newButton);});</script>
 
-  <script>
-    /* ---------------------------
-       #product-card >> button.add-to-cart
-    ---------------------------- */
-    const productCard = document.getElementById("product-card");
-    const pcShadow = productCard.attachShadow({ mode: "open" });
+    <!-- ShadowDOM Test Cases Section -->
+    <div style="margin: 40px 0; padding: 20px; border-top: 3px solid #333;">
+        <h2 style="text-align: center; color: #333;">ShadowDOM Test Cases</h2>
+        
+        <!-- Test Case 1: Single-level ShadowDOM - Product Card with Button (Click Event) -->
+        <div style="margin: 30px 0; padding: 20px; border: 2px solid #ccc; border-radius: 8px;">
+            <h3>Test Case 1: Single-level ShadowDOM - Product Card</h3>
+            <p>Selector: <code>#product-card >> button.add-to-cart</code></p>
+            <product-card id="product-card"></product-card>
+        </div>
 
-    pcShadow.innerHTML = `
-  <button class="add-to-cart">Shadow Add to Cart</button>
-`;
+        <!-- Test Case 2: Nested ShadowDOM - Search Results with Filter Panel (Click Event) -->
+        <div style="margin: 30px 0; padding: 20px; border: 2px solid #ccc; border-radius: 8px;">
+            <h3>Test Case 2: Nested ShadowDOM - Search Results</h3>
+            <p>Selector: <code>#search-results >> filter-panel >> input[type="checkbox"]</code></p>
+            <search-results id="search-results"></search-results>
+        </div>
 
-    /* ---------------------------
-       #search-results >> filter-panel >> input
-    ---------------------------- */
-    const searchResults = document.getElementById("search-results");
-    const srShadow = searchResults.attachShadow({ mode: "open" });
+        <!-- Test Case 3: Single-level ShadowDOM - Search Box Input (Focus/Blur Events) -->
+        <div style="margin: 30px 0; padding: 20px; border: 2px solid #ccc; border-radius: 8px;">
+            <h3>Test Case 3: ShadowDOM Input - Focus/Blur Events</h3>
+            <p>Selector: <code>#search-box >> input[type="text"]</code></p>
+            <search-box id="search-box"></search-box>
+        </div>
 
-    srShadow.innerHTML = `<filter-panel></filter-panel>`;
+        <!-- Test Case 4: Single-level ShadowDOM - Hoverable Element -->
+        <div style="margin: 30px 0; padding: 20px; border: 2px solid #ccc; border-radius: 8px;">
+            <h3>Test Case 4: ShadowDOM - Hover Event</h3>
+            <p>Selector: <code>#hover-card >> .hover-button</code></p>
+            <hover-card id="hover-card"></hover-card>
+        </div>
 
-    class FilterPanel extends HTMLElement {
-      constructor() {
-        super();
-        const shadow = this.attachShadow({ mode: "open" });
-        shadow.innerHTML = `
-      <label>
-        <input type="checkbox" /> Filter Option
-      </label>
-    `;
-      }
-    }
-    customElements.define("filter-panel", FilterPanel);
+        <!-- Test Case 5: ShadowDOM with Slots -->
+        <div style="margin: 30px 0; padding: 20px; border: 2px solid #ccc; border-radius: 8px;">
+            <h3>Test Case 5: ShadowDOM - Slots Button</h3>
+            <p>Selector: <code>#slot-button >> button.slot-button</code></p>
+            <slot-button id="slot-button">
+                <span slot="slot-before-text">★</span>
+                Slots Button
+                <span slot="slot-after-text">→</span>
+            </slot-button>
+        </div>
+    </div>
 
-    /* ---------------------------
-       iframe#site-header >>> .mini-cart-icon
-    ---------------------------- */
-    const siteHeader = document.getElementById("site-header");
-    siteHeader.srcdoc = `
-  <button class="mini-cart-icon">Mini Cart</button>
-`;
+    <!-- ShadowDOM Custom Elements Script -->
+    <script>
+        // Custom Element 1: Product Card (Single-level ShadowDOM)
+        class ProductCard extends HTMLElement {
+            constructor() {
+                super();
+                const shadow = this.attachShadow({ mode: 'open' });
+                shadow.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            border: 2px solid #ddd;
+                            border-radius: 8px;
+                            padding: 20px;
+                            max-width: 300px;
+                            background: #f9f9f9;
+                        }
+                        .product-title {
+                            font-size: 18px;
+                            font-weight: bold;
+                            margin-bottom: 10px;
+                        }
+                        .product-price {
+                            font-size: 20px;
+                            color: #e74c3c;
+                            margin-bottom: 15px;
+                        }
+                        button.add-to-cart {
+                            background-color: #3498db;
+                            color: white;
+                            border: none;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            font-size: 16px;
+                        }
+                        button.add-to-cart:hover {
+                            background-color: #2980b9;
+                        }
+                    </style>
+                    <div class="product-title">Sample Product</div>
+                    <div class="product-price">$99.99</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                `;
+            }
+        }
+        customElements.define('product-card', ProductCard);
 
-    /* ---------------------------
-       iframe#checkout >>> #cart >> button.confirm-payment
-    ---------------------------- */
-    const checkout = document.getElementById("checkout");
-    checkout.srcdoc = `
-  <div id="cart"></div>
-  <script>
-    const cart = document.getElementById("cart");
-    const shadow = cart.attachShadow({ mode: "open" });
-    shadow.innerHTML = '<button class="confirm-payment">Pay Now</button>';
-  <\/script>
-`;
+        // Custom Element 2: Filter Panel (for nested ShadowDOM)
+        class FilterPanel extends HTMLElement {
+            constructor() {
+                super();
+                const shadow = this.attachShadow({ mode: 'open' });
+                shadow.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            padding: 15px;
+                            background: #fff;
+                            border: 1px solid #ddd;
+                            border-radius: 5px;
+                        }
+                        .filter-label {
+                            font-weight: bold;
+                            margin-bottom: 10px;
+                        }
+                        .filter-option {
+                            margin: 8px 0;
+                        }
+                        input[type="checkbox"] {
+                            margin-right: 8px;
+                        }
+                    </style>
+                    <div class="filter-label">Filter Options:</div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter1" />
+                        <label for="filter1">Option 1</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="filter2" />
+                        <label for="filter2">Option 2</label>
+                    </div>
+                `;
+            }
+        }
+        customElements.define('filter-panel', FilterPanel);
 
-    /* ---------------------------
-       #order-summary >> iframe >>> .place-order
-    ---------------------------- */
-    const orderSummary = document.getElementById("order-summary");
-    const osShadow = orderSummary.attachShadow({ mode: "open" });
+        // Custom Element 3: Search Results (Nested ShadowDOM - contains FilterPanel)
+        class SearchResults extends HTMLElement {
+            constructor() {
+                super();
+                const shadow = this.attachShadow({ mode: 'open' });
+                shadow.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            border: 2px solid #3498db;
+                            border-radius: 8px;
+                            padding: 20px;
+                            background: #ecf0f1;
+                        }
+                        .results-header {
+                            font-size: 18px;
+                            font-weight: bold;
+                            margin-bottom: 15px;
+                        }
+                    </style>
+                    <div class="results-header">Search Results</div>
+                    <filter-panel></filter-panel>
+                `;
+            }
+        }
+        customElements.define('search-results', SearchResults);
 
-    osShadow.innerHTML = `
-  <iframe id="summary-frame"></iframe>
-`;
+        // Custom Element 4: Search Box (Single-level ShadowDOM with Input)
+        class SearchBox extends HTMLElement {
+            constructor() {
+                super();
+                const shadow = this.attachShadow({ mode: 'open' });
+                shadow.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            border: 2px solid #95a5a6;
+                            border-radius: 8px;
+                            padding: 15px;
+                            background: #fff;
+                            max-width: 400px;
+                        }
+                        .search-label {
+                            display: block;
+                            margin-bottom: 8px;
+                            font-weight: bold;
+                        }
+                        input[type="text"] {
+                            width: 100%;
+                            padding: 10px;
+                            border: 1px solid #ddd;
+                            border-radius: 4px;
+                            font-size: 14px;
+                            box-sizing: border-box;
+                        }
+                        input[type="text"]:focus {
+                            outline: none;
+                            border-color: #3498db;
+                            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+                        }
+                    </style>
+                    <label class="search-label">Search:</label>
+                    <input type="text" placeholder="Type to search..." />
+                `;
+            }
+        }
+        customElements.define('search-box', SearchBox);
 
-    const summaryFrame = osShadow.querySelector("#summary-frame");
-    summaryFrame.srcdoc = `
-  <button class="place-order">Place Order</button>
-`;
-  </script>
+        // Custom Element 5: Hover Card (Single-level ShadowDOM with Hoverable Element)
+        class HoverCard extends HTMLElement {
+            constructor() {
+                super();
+                const shadow = this.attachShadow({ mode: 'open' });
+                shadow.innerHTML = `
+                    <style>
+                        :host {
+                            display: block;
+                            border: 2px solid #9b59b6;
+                            border-radius: 8px;
+                            padding: 20px;
+                            background: #f4f4f4;
+                            max-width: 300px;
+                        }
+                        .card-title {
+                            font-size: 16px;
+                            margin-bottom: 15px;
+                        }
+                        .hover-button {
+                            background-color: #9b59b6;
+                            color: white;
+                            border: none;
+                            padding: 12px 24px;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            font-size: 14px;
+                            transition: background-color 0.3s;
+                        }
+                        .hover-button:hover {
+                            background-color: #8e44ad;
+                        }
+                    </style>
+                    <div class="card-title">Hover Test Card</div>
+                    <button class="hover-button">Hover Me</button>
+                `;
+            }
+        }
+        customElements.define('hover-card', HoverCard);
 
+        // Custom Element 6: Button with Slots (Single-level ShadowDOM using <slot>)
+        class SlotButton extends HTMLElement {
+            constructor() {
+                super();
+                const shadow = this.attachShadow({ mode: 'open' });
+                shadow.innerHTML = `
+                    <style>
+                        :host {
+                            display: inline-block;
+                        }
+                        button.slot-button {
+                            background-color: #16a34a;
+                            color: white;
+                            border: none;
+                            padding: 10px 20px;
+                            border-radius: 999px;
+                            cursor: pointer;
+                            font-size: 14px;
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 8px;
+                        }
+                        button.slot-button:hover {
+                            background-color: #15803d;
+                        }
+                    </style>
+                    <button class="slot-button">
+                        <slot name="slot-before-text"></slot>
+                        <span class="label"><slot></slot></span>
+                        <slot name="slot-after-text"></slot>
+                    </button>
+                `;
+            }
+        }
+        customElements.define('slot-button', SlotButton);
+    </script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
