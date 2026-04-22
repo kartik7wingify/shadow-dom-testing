@@ -50,7 +50,7 @@
       }
     </style>
     
-   <!-- Start VWO Async SmartCode () -->
+   <!-- Start VWO Async SmartCode -->
 <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
 <script type='text/javascript' id='vwoCode'>
 window._vwo_code ||
@@ -315,6 +315,106 @@ if(f=!1,v=d.querySelector('#vwoCode'),cc={},-1<d.URL.indexOf('__vwo_disable__')|
                 Slots Button
                 <span slot="slot-after-text">→</span>
             </slot-button>
+        </div>
+    </div>
+
+    <!-- IFrame Test Cases Section -->
+    <div style="margin: 40px 0; padding: 20px; border-top: 3px solid #333;">
+        <h2 style="text-align: center; color: #333;">IFrame Test Cases</h2>
+
+        <!-- IFrame Test Case 1: Single iframe - Product Card with Button (Click Event) -->
+        <div style="margin: 30px 0; padding: 20px; border: 2px solid #ccc; border-radius: 8px;">
+            <h3>IFrame Test Case 1: Single iframe - Product Card</h3>
+            <p>Selector: <code>#iframe-product-card >>> button.add-to-cart</code></p>
+            <iframe id="iframe-product-card" style="border: 2px solid #ddd; border-radius: 8px; width: 340px; height: 160px;" srcdoc="
+                <!DOCTYPE html><html><head><style>
+                    body { margin: 0; padding: 20px; font-family: sans-serif; background: #f9f9f9; }
+                    .product-title { font-size: 18px; font-weight: bold; margin-bottom: 10px; }
+                    .product-price { font-size: 20px; color: #e74c3c; margin-bottom: 15px; }
+                    button.add-to-cart { background-color: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; }
+                    button.add-to-cart:hover { background-color: #2980b9; }
+                </style></head><body>
+                    <div class='product-title'>Sample Product</div>
+                    <div class='product-price'>$99.99</div>
+                    <button class='add-to-cart'>Add to Cart</button>
+                </body></html>
+            "></iframe>
+        </div>
+
+        <!-- IFrame Test Case 2: Nested iframe - Search Results with Filter (Click Event) -->
+        <div style="margin: 30px 0; padding: 20px; border: 2px solid #ccc; border-radius: 8px;">
+            <h3>IFrame Test Case 2: iframe - Search Results with Filter</h3>
+            <p>Selector: <code>#iframe-search-results >>> input[type="checkbox"]</code></p>
+            <iframe id="iframe-search-results" style="border: 2px solid #3498db; border-radius: 8px; width: 340px; height: 180px;" srcdoc="
+                <!DOCTYPE html><html><head><style>
+                    body { margin: 0; padding: 20px; font-family: sans-serif; background: #ecf0f1; }
+                    .results-header { font-size: 18px; font-weight: bold; margin-bottom: 15px; }
+                    .filter-label { font-weight: bold; margin-bottom: 10px; }
+                    .filter-option { margin: 8px 0; }
+                    input[type='checkbox'] { margin-right: 8px; }
+                </style></head><body>
+                    <div class='results-header'>Search Results</div>
+                    <div class='filter-label'>Filter Options:</div>
+                    <div class='filter-option'><input type='checkbox' id='filter1' /><label for='filter1'>Option 1</label></div>
+                    <div class='filter-option'><input type='checkbox' id='filter2' /><label for='filter2'>Option 2</label></div>
+                </body></html>
+            "></iframe>
+        </div>
+
+        <!-- IFrame Test Case 3: iframe Input - Focus/Blur Events -->
+        <div style="margin: 30px 0; padding: 20px; border: 2px solid #ccc; border-radius: 8px;">
+            <h3>IFrame Test Case 3: iframe Input - Focus/Blur Events</h3>
+            <p>Selector: <code>#iframe-search-box >>> input[type="text"]</code></p>
+            <iframe id="iframe-search-box" style="border: 2px solid #95a5a6; border-radius: 8px; width: 440px; height: 110px;" srcdoc="
+                <!DOCTYPE html><html><head><style>
+                    body { margin: 0; padding: 15px; font-family: sans-serif; background: #fff; }
+                    .search-label { display: block; margin-bottom: 8px; font-weight: bold; }
+                    input[type='text'] { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; box-sizing: border-box; }
+                    input[type='text']:focus { outline: none; border-color: #3498db; box-shadow: 0 0 5px rgba(52,152,219,0.3); }
+                </style></head><body>
+                    <label class='search-label'>Search:</label>
+                    <input type='text' placeholder='Type to search...' />
+                </body></html>
+            "></iframe>
+        </div>
+
+        <!-- IFrame Test Case 4: iframe - Hover Event -->
+        <div style="margin: 30px 0; padding: 20px; border: 2px solid #ccc; border-radius: 8px;">
+            <h3>IFrame Test Case 4: iframe - Hover Event</h3>
+            <p>Selector: <code>#iframe-hover-card >>> .hover-button</code></p>
+            <iframe id="iframe-hover-card" style="border: 2px solid #9b59b6; border-radius: 8px; width: 340px; height: 130px;" srcdoc="
+                <!DOCTYPE html><html><head><style>
+                    body { margin: 0; padding: 20px; font-family: sans-serif; background: #f4f4f4; }
+                    .card-title { font-size: 16px; margin-bottom: 15px; }
+                    .hover-button { background-color: #9b59b6; color: white; border: none; padding: 12px 24px; border-radius: 5px; cursor: pointer; font-size: 14px; transition: background-color 0.3s; }
+                    .hover-button:hover { background-color: #8e44ad; }
+                </style></head><body>
+                    <div class='card-title'>Hover Test Card</div>
+                    <button class='hover-button'>Hover Me</button>
+                </body></html>
+            "></iframe>
+        </div>
+
+        <!-- IFrame Test Case 5: iframe with a Form Submit Button -->
+        <div style="margin: 30px 0; padding: 20px; border: 2px solid #ccc; border-radius: 8px;">
+            <h3>IFrame Test Case 5: iframe - Form with Submit Button</h3>
+            <p>Selector: <code>#iframe-form >>> button.submit-btn</code></p>
+            <iframe id="iframe-form" style="border: 2px solid #16a34a; border-radius: 8px; width: 440px; height: 200px;" srcdoc="
+                <!DOCTYPE html><html><head><style>
+                    body { margin: 0; padding: 20px; font-family: sans-serif; background: #f0fdf4; }
+                    form { display: flex; flex-direction: column; gap: 12px; }
+                    label { font-weight: bold; font-size: 14px; }
+                    input[type='text'], input[type='email'] { padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; }
+                    button.submit-btn { background-color: #16a34a; color: white; border: none; padding: 10px 20px; border-radius: 999px; cursor: pointer; font-size: 14px; align-self: flex-start; }
+                    button.submit-btn:hover { background-color: #15803d; }
+                </style></head><body>
+                    <form onsubmit='return false;'>
+                        <label>Name: <input type='text' placeholder='Your name' /></label>
+                        <label>Email: <input type='email' placeholder='your@email.com' /></label>
+                        <button class='submit-btn'>Submit</button>
+                    </form>
+                </body></html>
+            "></iframe>
         </div>
     </div>
 
